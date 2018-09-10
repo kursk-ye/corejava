@@ -18,8 +18,8 @@ public class Test
 
         println("Sorted by length");
         Arrays.sort(plants , (first , second) -> first.length() - second.length());
-        /*Object o = new Object();
-        Arrays.sort(plants , o -> return true);*/
+
+        //Arrays.sort(plants , (Object o) -> { return true });
         println(Arrays.toString(plants));
 
         Timer t = new Timer(1000, event -> println("this time is " + new Date()));
