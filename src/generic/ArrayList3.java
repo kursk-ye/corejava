@@ -13,11 +13,11 @@ public class ArrayList3<E> {
         elements[n] = e;
     }
 
-    public static <T extends Comparable> T[] minmax(T ... a){
+    /*public static <T extends Comparable> T[] minmax(T ... a){
         Object[] mm = new Object[2];
         return (Ts[])mm;
         //return ArrayAlg.minmax(String[]::new , "Tom","Jack","Harry");
-    }
+    }*/
 }
 
 class ArrayAlg{
