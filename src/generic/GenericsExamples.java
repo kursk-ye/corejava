@@ -27,15 +27,11 @@ public class GenericsExamples
 {
     public static void main(String[] args)
     {
-        //List of apples
-        List<Apple> apples = (List<Apple>) new ArrayList<Apple>();
-        apples.add(new Apple()) ;
 
-        //We can assign a list of apples to a basket of apples
-        List<? super Apple> basket = new java.util.ArrayList<>();
+        List<? super Apple> basket = null;
 
         basket.add(new Apple());      //Successful
         basket.add(new AsianApple()); //Successful
-        basket.add(new Fruit());      //Compile time error
+        //basket.add(new Fruit());      //Compile time error ,why?
     }
 }
