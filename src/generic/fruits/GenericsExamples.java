@@ -3,19 +3,7 @@ package generic.fruits;
 import java.util.ArrayList;
 import java.util.List;
 
-class Fruit {
-    @Override
-    public String toString() {
-        return "I am a Fruit !!";
-    }
-}
 
-class Apple extends Fruit {
-    @Override
-    public String toString() {
-        return "I am an Apple !!";
-    }
-}
 
 public class GenericsExamples
 {

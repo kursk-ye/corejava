@@ -1,11 +1,15 @@
 package generic;
 
+import java.util.function.Predicate;
+import java.util.ArrayList;
+
 import static com.kursk.Util.println;
 
 public class Test2 {
     public static void printBuddies(Pair<? extends Employee>  p){
         Employee first = p.getFirst();
         Employee second = p.getSecond();
+        //p.setFirst(new Manager("kursk"));
         println(first.getName() + " and " + second.getName() + " are buddies.");
     }
 
@@ -39,5 +43,16 @@ public class Test2 {
         Pair<Employee> result = new Pair<>();
         minmaxBonus(ma , result);
         println("min: " + result.getFirst().getName() + " max: " + result.getSecond().getName());
+
+        ArrayList<Manager> ma2 = new ArrayList<>();
+        ma2.set(0,ma[0]);
+        ma2.set(1,ma[1]);
+        ma2.set(2,ma[2]);
+        ma2.set(3,ma[3]);
+        ma2.set(4,ma[4]);
+        Predicate<? super Manager> oddHashCode = obj -> obj.hashCode() %2 != 0;
+        ma2.removeIf(oddHashCode);
+
+
     }
 }
