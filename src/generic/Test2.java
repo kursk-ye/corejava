@@ -30,8 +30,12 @@ public class Test2 {
         printBuddies(new Pair<Manager>(new Manager("yelei") , new Manager("yeyunze")));
 
         Pair<Manager> managerBuddies = new Pair<>(new Manager("ceo"), new Manager("cfo"));
-        Pair<? extends Employee> wildcardBuddies = managerBuddies;
+
+        Pair<? extends Employee> wildcardBuddies = null;
         //wildcardBuddies.setFirst(new Employee("kursk"));
+
+        Pair<? super Employee> wildcardBuddies2 = null;
+        wildcardBuddies2.setFirst(new Employee("kursk"));
 
         Manager ma[] = new Manager[5];
         ma[0] = new Manager("e1" , 10);

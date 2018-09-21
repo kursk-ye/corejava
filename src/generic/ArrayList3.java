@@ -16,7 +16,7 @@ public class ArrayList3<E> {
     /*public static <T extends Comparable> T[] minmax(T ... a){
         Object[] mm = new Object[2];
         return (Ts[])mm;
-        return ArrayAlg.minmax(String[]::new , "Tom","Jack","Harry");
+        //return ArrayAlg.minmax(String[]::new , "Tom","Jack","Harry");
     }*/
 }
 
