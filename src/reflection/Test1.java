@@ -20,8 +20,15 @@ public class Test1 {
             System.out.println(e);
         }
 
-        Constructor c = new Constructor();
-        //Object os = Constructor.newI
+        try{
+            Class c3 = Class.forName("generic.fruits.Apple");
+            Constructor c = c3.getConstructor(new Class[]{double.class});
+            Apple ap = (Apple) c.newInstance(20);
+            println("apple price: " + ap.getPrice());
+            }catch(Exception e){
+                    System.out.println(e);
+            }
+
 
         try{
             Apple a = new Apple();
