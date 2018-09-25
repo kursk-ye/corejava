@@ -12,7 +12,16 @@ public class Test1 {
 
     public static void main(String[] args) {
 
-        Constructor c
+        String s = "java.lang.String";
+        try{
+            Class c2 = Class.forName(s);
+            String se = (String) c2.newInstance();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        Constructor c = new Constructor();
+        //Object os = Constructor.newI
 
         try{
             Apple a = new Apple();
