@@ -12,4 +12,8 @@ public class Util {
     public static void println(int i){
         System.out.println(i);
     }
+
+    public static void println(Object o){
+        System.out.println(o.toString());
+    }
 }

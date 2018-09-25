@@ -31,7 +31,7 @@ public class Test2 {
 
         Pair<Manager> managerBuddies = new Pair<>(new Manager("ceo"), new Manager("cfo"));
 
-        Pair<? extends Employee> wildcardBuddies = null;
+        Pair<? extends Employee> wildcardBuddies = new Pair<>(new Employee("e1"), new Employee("e2"));
         //wildcardBuddies.setFirst(new Employee("kursk"));
 
         Pair<? super Employee> wildcardBuddies2 = null;
