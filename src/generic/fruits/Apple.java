@@ -1,18 +1,16 @@
 package generic.fruits;
 
 public class Apple extends Fruit {
-    private  double price;
-
     public Apple(){
         super();
     }
 
     public Apple(double price){
-        this.price = price;
+        super(price);
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     @Override
