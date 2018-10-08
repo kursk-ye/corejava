@@ -9,10 +9,6 @@ public class Apple extends Fruit {
         super(price);
     }
 
-    public double getPrice() {
-        return this.price;
-    }
-
     @Override
     public String toString() {
         return "I am an Apple !!";
