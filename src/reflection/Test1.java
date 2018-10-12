@@ -26,7 +26,7 @@ public class Test1 {
             Apple ap = (Apple) c.newInstance(20);
             println("apple price: " + ap.getPrice());
             }catch(Exception e){
-                    System.out.println(e);
+                    e.printStackTrace();
             }
 
 
