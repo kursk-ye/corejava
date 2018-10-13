@@ -2,6 +2,7 @@ package generic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import static com.kursk.Util.*;
 import static java.lang.Math.pow;
@@ -12,6 +13,31 @@ public class Petal {
 
     Petal(){
         this.PowerList = new ArrayList<Double>(Arrays.asList(pow(1,petalSize) , pow(2,petalSize), pow(3,petalSize), pow(4,petalSize), pow(5,petalSize)));
+    }
+
+    public static void main(String[] args) {
+        int result = 0;
+        Scanner z = new Scanner(System.in);
+        int n = z.nextInt();
+        for (int i = 2; i < Math.pow(10,n+1)-1; i++) {
+            int sum = 0;
+            int number = i;
+            while (number > 0) {
+                int d = number % 10;
+                number /= 10;
+
+                int temp = d;
+                for(int j = 1; j < n; j++){
+                    temp *= d;
+                }
+                sum += temp;
+            }
+
+            if (sum == i) {
+                result += i;
+            }
+        }
+        System.out.println(result);
     }
 
 /*    public static void main(String[] args) {
@@ -30,31 +56,18 @@ public class Petal {
         getPetalNumber(p.PowerList , petalSize );
     }*/
 
-    public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        for (int i = 5 ; i>=1 ; i--){
-            factorial(i , list);
-        }
-        println("list:"+list);
-    }
 
-    public static int factorial( int n , ArrayList<Integer> list){
-        if ( n == 1){
-            list.add(1);
-            return  1;
-        } else {
-            list.add(n);
-            return  n * factorial( n - 1 , list);
-        }
-    }
+    /*
+    a           0 - 9 的次方
+    time        a出现的次数
+    depth       递归的深度
+     */
+    /*public static Double getRecursionResult(Double  a, int time , int depth){
 
-    /*public static Double getPetalNumber(ArrayList<Double> list , int time){
-
-        if ( time == 0 ){
+        if ( depth == 0 ){
             return  0.0;
         } else {
-            return  list.get(listIndex) * time + getPetalNumber(list , time - innerTime);
+            return  a * time + getRecursionResult(list , time - innerTime);
         }
-
     }*/
 }
