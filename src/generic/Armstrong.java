@@ -60,7 +60,7 @@ public class Armstrong
 
         long startTime = System.nanoTime();
 
-        for(int i = (int)Math.pow(10,21)-1; i >=  Math.pow(10,20) - 1 ; i-- ){
+        for(int i = (int)Math.pow(10,4)-1; i >=  Math.pow(10,2) - 1 ; i-- ){
             if (ob.isArmstrong(i))  println(i);
         }
 
