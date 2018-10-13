@@ -1,14 +1,14 @@
 package generic;
 
 public class Employee {
-    protected String name;
-    protected int bonuse;
+    String name;
+    int bonuse;
 
-    Employee(String name){
+    public Employee(String name){
         this.name = name;
     }
 
-    Employee(String name , int bonuse){
+    public Employee(String name , int bonuse){
         this.name = name;
         this.bonuse = bonuse;
     }

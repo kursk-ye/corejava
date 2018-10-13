@@ -16,4 +16,22 @@ public class Util {
     public static void println(Object o){
         System.out.println(o.toString());
     }
+
+    public static void println(Double o){
+        System.out.println(o.toString());
+    }
+
+    public static void print(String s){ System.out.print(s);}
+
+    public static void print(boolean b){
+        System.out.print(b);
+    }
+
+    public static void print(int i){
+        System.out.print(i);
+    }
+
+    public static void print(Object o){
+        System.out.print(o.toString());
+    }
 }
