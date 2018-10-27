@@ -24,7 +24,7 @@ public class Test1 {
             Class c3 = Class.forName("generic.fruits.Apple");
             Constructor c = c3.getConstructor(new Class[]{double.class});
             Apple ap = (Apple) c.newInstance(20);
-            println("apple price: " + ap.getPrice());
+            //println("apple price: " + ap.getPrice());
             }catch(Exception e){
                     e.printStackTrace();
             }
