@@ -3,10 +3,18 @@ package generic.fruits;
 import java.util.function.DoubleConsumer;
 
 public class Fruit implements Comparable<Fruit> {
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     private  double price;
 
-    public Fruit(){
-
+    public Fruit(double price){
+        this.price = price;
     }
 
     public Fruit(Double price){
@@ -19,9 +27,9 @@ public class Fruit implements Comparable<Fruit> {
     }
 
     public int compareTo(Fruit o) {
-        if (price == o.price) return 0;
-        if (price > o.price ) return 1;
-            return -1;
+        if (getPrice() == o.getPrice()) return 0;
+        if (getPrice() > o.getPrice() ) return 1;
+        return -1;
     }
 }
 
