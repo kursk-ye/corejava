@@ -2,13 +2,23 @@ package generic.fruits;
 
 import java.util.function.DoubleConsumer;
 
-import static com.kursk.Util.*;
+public class Fruit implements Comparable<Fruit> {
+    public double getPrice() {
+        return price;
+    }
 
-public class Fruit {
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     private  double price;
 
     public Fruit(){
 
+    }
+
+    public Fruit(double price){
+        this.price = price;
     }
 
     public Fruit(Double price){
@@ -20,11 +30,11 @@ public class Fruit {
         return "I am a Fruit !!";
     }
 
-    public final void eatFruit(String name){
-        println( "eat " + name);
+    public int compareTo(Fruit o) {
+        if (getPrice() == o.getPrice()) return 0;
+        if (getPrice() > o.getPrice() ) return 1;
+        return -1;
     }
-
-
 }
 
 
