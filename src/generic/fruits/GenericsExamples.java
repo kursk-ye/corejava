@@ -11,7 +11,7 @@ public class GenericsExamples
     {
         //List of apples
         List<Apple> apples = new ArrayList<Apple>();
-        apples.add(new Apple());
+        apples.add(new Apple(3));
 
         //We can assign a list of apples to a basket of fruits;
         //because apple is subtype of fruit

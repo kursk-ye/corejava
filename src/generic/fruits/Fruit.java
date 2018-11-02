@@ -13,6 +13,10 @@ public class Fruit implements Comparable<Fruit> {
 
     private  double price;
 
+    public Fruit(){
+
+    }
+
     public Fruit(double price){
         this.price = price;
     }

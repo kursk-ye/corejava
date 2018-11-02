@@ -1,11 +1,17 @@
 package generic.fruits;
 
+import java.lang.reflect.Field;
+
 import static com.kursk.Util.println;
 
 public class Apple extends Fruit {
 
     public Apple(double price){
         super(price);
+    }
+
+    public Apple(){
+        super();
     }
 
     @Override
@@ -26,5 +32,8 @@ public class Apple extends Fruit {
         Apple o = new Apple(12);
         Apple o2 = new Apple(15);
         o.compareTo(o2);
+
+        println( o  instanceof Fruit);
+        println( o  instanceof Comparable);
     }
 }

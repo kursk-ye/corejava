@@ -12,10 +12,10 @@ public class Test4 {
     }
 
     public static void main(String[] args) {
-        Fruit apple = new Apple();
+        Fruit apple = new Apple(2);
         getApple((Apple) apple);
 
-        Apple apple2 = new RedApple();
+        Apple apple2 = new RedApple(3);
         getRedApple((RedApple) apple2);
     }
 }
