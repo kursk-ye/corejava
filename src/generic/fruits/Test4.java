@@ -17,5 +17,26 @@ public class Test4 {
 
         Apple apple2 = new RedApple();
         getRedApple((RedApple) apple2);
+
+        // RedApple apple3 = new Apple();
+
+        println(apple instanceof Apple );
+        println(apple instanceof Fruit );
+
+        println(apple2 instanceof RedApple );
+        println(apple2 instanceof Apple );
+        println(apple instanceof Fruit );
+
+        println(apple.getClass().getName());
+        println(apple2.getClass().getName());
+
+        Apple apple4 = new Apple();
+        apple4.eatFruit("orange");
+
+        Fruit apple5 = new Apple();
+        ((Apple) apple5).getApple();
+        // apple5.getApple()  //error
+
+
     }
 }
