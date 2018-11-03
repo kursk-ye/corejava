@@ -1,5 +1,7 @@
 package generic.fruits;
 
+import interfacess.comparator.Kcomparator;
+
 import java.util.function.DoubleConsumer;
 
 public class Fruit implements Comparable<Fruit> {
@@ -35,6 +37,11 @@ public class Fruit implements Comparable<Fruit> {
         if (getPrice() > o.getPrice() ) return 1;
         return -1;
     }
+
+    public static <T> void sort(T[] a , Kcomparator<? extends T> c){
+        c.compare(a[0] , a[1]);
+    }
+
 }
 
 

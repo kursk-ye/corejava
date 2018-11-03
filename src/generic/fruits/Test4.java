@@ -31,10 +31,10 @@ public class Test4 {
         println(apple2.getClass().getName());
 
         Apple apple4 = new Apple();
-        apple4.eatFruit("orange");
+        //apple4.eatFruit("orange");
 
         Fruit apple5 = new Apple();
-        ((Apple) apple5).getApple();
+        //((Apple) apple5).getApple();
         // apple5.getApple()  //error
 
 
