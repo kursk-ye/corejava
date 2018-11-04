@@ -40,6 +40,7 @@ public class Fruit implements Comparable<Fruit> {
 
     public static <T> void sort(T[] a , Kcomparator<? super T> c){ // why super can't extends
         c.compare(a[0] , a[1]);
+        a[0] = (T)c.getGenericValue(a[0]);
     }
 
 }
