@@ -9,6 +9,13 @@ class Fruit {
     }
 }
 
+class Banana extends Fruit {
+    @Override
+    public String toString() {
+        return "I am an Banana !!";
+    }
+}
+
 class Apple extends Fruit {
     @Override
     public String toString() {
@@ -23,6 +30,13 @@ class AsianApple extends Apple {
     }
 }
 
+class BlueApple extends Apple {
+    @Override
+    public String toString() {
+        return "I am an BlueApple !!";
+    }
+}
+
 public class GenericsExamples
 {
     public static void main(String[] args)
@@ -33,5 +47,12 @@ public class GenericsExamples
         basket.add(new Apple());      //Successful
         basket.add(new AsianApple()); //Successful
         //basket.add(new Fruit());      //Compile time error ,why?
+
+        Fruit f1 = new Apple();
+        //basket.add(f1);
+
+        //basket.add(new Object());
+
+        basket.add(new BlueApple());
     }
 }
