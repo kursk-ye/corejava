@@ -4,7 +4,8 @@ import static com.kursk.Util.println;
 
 public class Lamdbax {
 
-    public static void add(int other , AddMethod m){
+    public static void add(int other , AddMethod m)
+    {
         println(m.method1(other,other));
     }
 }
