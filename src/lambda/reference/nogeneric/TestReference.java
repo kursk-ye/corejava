@@ -1,4 +1,4 @@
-package lambda.reference;
+package lambda.reference.nogeneric;
 
 import java.util.function.Consumer;
 

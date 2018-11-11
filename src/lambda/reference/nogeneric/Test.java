@@ -1,4 +1,4 @@
-package lambda.reference;
+package lambda.reference.nogeneric;
 
 public class Test  {
 

@@ -1,11 +1,11 @@
-package lambda.reference;
+package lambda.reference.generic;
 
 import static com.kursk.Util.println;
 
 public class MethodProvider {
     private String provider;
 
-    MethodProvider(String provider)
+   public MethodProvider(String provider)
     {
         this.provider = provider;
     }
