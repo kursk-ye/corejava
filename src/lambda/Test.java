@@ -17,7 +17,7 @@ public class Test
         println(Arrays.toString(plants));
 
         println("Sorted by length");
-        Arrays.sort(plants , (first , second) -> first.length() - second.length());
+        Arrays.sort(plants , (first , second) -> first.length() - second.length()  );
 
         //Arrays.sort(plants , (Object o) -> { return true });
         println(Arrays.toString(plants));
