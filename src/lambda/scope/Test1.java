@@ -21,6 +21,8 @@ public class Test1 {
     }
 
     public static void main(String[] args) {
+        new JFrame().setVisible(true);
         Test1.repeatMessage("hello kursk" , 1000);
+
     }
 }
