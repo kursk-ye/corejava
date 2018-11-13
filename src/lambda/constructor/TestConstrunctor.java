@@ -20,7 +20,7 @@ public class TestConstrunctor {
         List<String> l2 = s2.get();
 
         // Using a method reference
-        Supplier<List::new;
-        List<String> l = s.get();
+        Supplier<List> s3 = ArrayList<String>::new;
+        List<String> l3 = s3.get();
     }
 }
