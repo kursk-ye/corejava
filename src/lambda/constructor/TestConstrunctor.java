@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import static com.kursk.Util.println;
+
 public class TestConstrunctor {
-    public static void main(String[] args) {
+    public static void main(String[] args , String text) {
         // Using an anonymous class
         Supplier<List<String>> s = new Supplier() {
             public List<String> get() {
-                return new ArrayList<String>();
+                 return new ArrayList<String>();
             }
         };
+
 
         List<String> l = s.get();
 
