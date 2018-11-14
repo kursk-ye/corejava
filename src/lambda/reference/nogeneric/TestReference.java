@@ -11,6 +11,6 @@ public class TestReference {
     }
 
     public void callMethod(Consumer<MethodProvider> action) {
-       action.accept(this.mp) ;
+       action.accept(this.mp ) ;
     }
 }
