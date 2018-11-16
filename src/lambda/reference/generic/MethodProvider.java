@@ -10,8 +10,8 @@ public class MethodProvider {
         this.provider = provider;
     }
 
-    public void helloProvider() {
-        println("Hello " + this.provider + " !")  ;
+    public void helloProvider(String s) {
+        println("Hello " + this.provider + s +" !")  ;
         // return "Hello ";
     }
 }

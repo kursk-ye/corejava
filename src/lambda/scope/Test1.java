@@ -14,8 +14,11 @@ public class Test1 {
     {
         ActionListener listener = event ->
         {
-            println(text);
-            Toolkit.getDefaultToolkit().beep();
+            for(int i=0; i<10; i++)
+            {
+                println(i + " " + text);
+                Toolkit.getDefaultToolkit().beep();
+            }
         };
         new Timer(delay , listener).start();
     }

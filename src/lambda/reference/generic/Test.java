@@ -8,8 +8,8 @@ public class Test {
         MethodProvider mp = new MethodProvider("yerunyang");
         MethodProvider2 mp2 = new MethodProvider2("yeyunze");
 
-        tr.callMethod(mp , MethodProvider::helloProvider );
-        tr.callMethod(mp2 , MethodProvider2::helloProvider );
+        tr.callMethod(mp , MethodProvider::helloProvider , " kursk" );
+        // tr.callMethod(mp2 , MethodProvider2::helloProvider );
     }
 
 
