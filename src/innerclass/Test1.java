@@ -16,6 +16,14 @@ public class Test1 {
         println(p.getClass().getEnclosingClass());
         //println(p.getName());
     }
+
+    void access(int i)
+    {
+        class Student
+        {
+
+        }
+    }
 }
 
 class Person{
