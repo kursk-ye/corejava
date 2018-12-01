@@ -1,6 +1,6 @@
 package generic;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     String name;
     int bonuse;
 
@@ -19,6 +19,11 @@ public class Employee {
 
     public int getBonus(){
         return this.bonuse;
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return 0;
     }
 }
 
