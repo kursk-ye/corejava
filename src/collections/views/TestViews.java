@@ -1,6 +1,7 @@
 package collections.views;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import static com.kursk.Util.println;
@@ -25,6 +26,8 @@ public class TestViews {
         subStaff.clear();
 
         println(staff);
+
+        //Comparator.comparingDouble()
 
     }
 }
