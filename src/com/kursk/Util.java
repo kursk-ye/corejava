@@ -34,4 +34,9 @@ public class Util {
     public static void print(Object o){
         System.out.print(o.toString());
     }
+
+    public static void printf(String format, Object ... args)
+    {
+        System.out.printf( format,  args);
+    }
 }
