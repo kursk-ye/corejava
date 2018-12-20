@@ -9,24 +9,21 @@ import static com.kursk.Util.println;
 
 public class Vote {
     public static void main(String[] args) {
-        String ipPrex = "113.111.111.";
+        String ipPrex = "114.111.111.";
         String ValidateCode = null;
 
-        /*try {
+        try {
             ValidateCode = whenGetRequest_thenOk("http://zsjh7l.v.vote8.cn/Front/VerifyCodeImage/Vote8Click.ashx");
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
-
-        for(int i=11 ; i < 250 ; i++){
-            votework(ipPrex + i , "1545317380,e04e9db496e56f0c87d5f2004b53f906");
         }
 
-        /*try {
-            println("result: "+ whenGetRequest_thenOk("http://zsjh7l.v.vote8.cn/Front/VerifyCodeImage/Vote8Click.ashx"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+        for(int i=1 ; i < 2 ; i++){
+            println("ValidateCode : " + ValidateCode);
+            votework(ipPrex + i , ValidateCode);
+        }
+
+        //println(getUserInfo("http://zsjh7l.v.vote8.cn/Front/VerifyCodeImage/Vote8Click.ashx"));
 
 
         //assertEquals("status code incorrect", status, 200);
@@ -49,7 +46,6 @@ public class Vote {
         }
 
         con.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
-        con.setRequestProperty("Accept-Encoding", "gzip, deflate");
         con.setRequestProperty("Accept-Language", "en,zh-CN;q=0.9,zh;q=0.8,zh-TW;q=0.7");
         con.setRequestProperty("Cache-Control", "no-cache");
         con.setRequestProperty("Connection", "keep-alive");
@@ -82,7 +78,7 @@ public class Vote {
         parameters.put("ctl00$cphMainContent$ucComment$hiddenWeixinHeadImgSmallUrl", "");
         parameters.put("ctl00$cphMainContent$ucComment$tbNickname", "");
         parameters.put("ctl00$cphMainContent$hiddenRefererUrl", "http://zsjh7l.v.vote8.cn/");
-        parameters.put("ctl00$cphMainContent$hiddenTimeStampEncodeString", "1545311693,509be926f814076bdeef173609c98dcb");
+        parameters.put("ctl00$cphMainContent$hiddenTimeStampEncodeString", "1545321501,f99cb3001e9dd8bfb9895c474a855e57");
         parameters.put("ctl00$cphMainContent$hiddenLatitude", "");
         parameters.put("ctl00$cphMainContent$hiddenLongitude", "");
         parameters.put("ctl00$cphMainContent$hiddenGeoLocationEncode", "");
@@ -91,6 +87,7 @@ public class Vote {
         try {
             out = new DataOutputStream(con.getOutputStream());
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out , "UTF-8"));
+            println(parameters.toString());
             writer.write(ParameterStringBuilder.getParamsString(parameters));
             writer.close();
             out.close();
@@ -128,14 +125,13 @@ public class Vote {
         con.setRequestMethod("GET");
 
         con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
-        con.setRequestProperty("Accept-Encoding", "gzip, deflate");
         con.setRequestProperty("X-Requested-With", "XMLHttpRequest");
         con.setRequestProperty("Referer", "http://zsjh7l.v.vote8.cn/");
         con.setRequestProperty("Host", "zsjh7l.v.vote8.cn");
         con.setRequestProperty("Cookie", "__cfduid=d37f729839501f2e93655a14496088e0e1545307184; ASP.NET_SessionId=3yaixsnmuzqesvn01xcbfkrx; UM_distinctid=167cb7c4bcf578-0d7247a6edaf77-b781636-1fa400-167cb7c4bd063f; yjs_id=89ec48ff45a5b8e6db00227ab292beb8; ctrl_time=1; Vote.HasVoteJustNow=1; Vote.VoteHistory.2902452=2018/12/20,2; Vote.HasVote.2902452=2018/12/20 21:22:37; CNZZDATA4999742=cnzz_eid%3D1033803528-1545304753-null%26ntime%3D1545312835");
 
         Map<String, String> parameters = new HashMap<>();
-        parameters.put("param1", "val");
+        //parameters.put("param1", "val");
         con.setDoOutput(true);
         DataOutputStream out = new DataOutputStream(con.getOutputStream());
         out.writeBytes(ParameterStringBuilder.getParamsString(parameters));
@@ -155,7 +151,7 @@ public class Vote {
         }
         in.close();
 
-        println("status:" + status );
+        //println("content.toString():" + content.toString() );
 
 
         return content.toString();
@@ -163,6 +159,51 @@ public class Vote {
         /*assertEquals("status code incorrect", status, 200);
         assertTrue("content incorrect", content.toString().contains("Example Domain"));*/
     }
+
+    public static String getUserInfo(String urlInput) {
+        String result = "";
+        HttpURLConnection con = null;
+
+        try {
+            URL url = new URL(urlInput);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            con.setDoOutput(true);
+            con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+            //con.setRequestProperty("Accept-Encoding", "gzip, deflate");
+            con.setRequestProperty("X-Requested-With", "XMLHttpRequest");
+            con.setRequestProperty("Referer", "http://zsjh7l.v.vote8.cn/");
+            con.setRequestProperty("Host", "zsjh7l.v.vote8.cn");
+            //con.setRequestProperty("Cookie", "__cfduid=d37f729839501f2e93655a14496088e0e1545307184; ASP.NET_SessionId=3yaixsnmuzqesvn01xcbfkrx; UM_distinctid=167cb7c4bcf578-0d7247a6edaf77-b781636-1fa400-167cb7c4bd063f; yjs_id=89ec48ff45a5b8e6db00227ab292beb8; ctrl_time=1; Vote.HasVoteJustNow=1; Vote.VoteHistory.2902452=2018/12/20,2; Vote.HasVote.2902452=2018/12/20 21:22:37; CNZZDATA4999742=cnzz_eid%3D1033803528-1545304753-null%26ntime%3D1545312835");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("contentType", "UTF-8");
+            con.setRequestProperty("Accept-Charset", "UTF-8");
+            if (con.getResponseCode() != 200) {
+                println("连接失败！");
+            } else {
+                InputStreamReader in = null;
+                in = new InputStreamReader(con.getInputStream(),"UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(in);
+
+                StringBuffer stringBuffer = new StringBuffer();
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    stringBuffer.append(line);
+                }
+                result = stringBuffer.toString();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (con != null)
+                con.disconnect();
+        }
+
+        return result;
+    }
+
+
 }
 
 class ParameterStringBuilder {
