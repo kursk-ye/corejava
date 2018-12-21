@@ -45,6 +45,9 @@ public class Vote {
             e.printStackTrace();
         }
 
+        con.setConnectTimeout(5000);
+        con.setReadTimeout(5000);
+
         con.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
         con.setRequestProperty("Accept-Language", "en,zh-CN;q=0.9,zh;q=0.8,zh-TW;q=0.7");
         con.setRequestProperty("Cache-Control", "no-cache");
