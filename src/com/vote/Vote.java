@@ -11,7 +11,7 @@ public class Vote {
     public static void main(String[] args) {
         String ipPrex = "222.222.222.";
 
-        for(int i=0 ; i < 20 ; i++){
+        for(int i=0 ; i < 2 ; i++){
             votework(ipPrex + i +"0");
         }
 
@@ -70,7 +70,7 @@ public class Vote {
             e.printStackTrace();
         }
 
-        //println(content);
+        println(content);
     }
 }
 
