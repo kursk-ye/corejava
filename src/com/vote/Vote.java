@@ -8,20 +8,24 @@ import java.util.Map;
 import static com.kursk.Util.println;
 
 public class Vote {
-    public static void main(String[] args) {
-        String ipPrex = "114.111.111.";
+    public static void main(String[] args) throws InterruptedException {
+        String ipPrex = "18.122.111.";
         String ValidateCode = null;
 
         try {
             ValidateCode = whenGetRequest_thenOk("http://zsjh7l.v.vote8.cn/Front/VerifyCodeImage/Vote8Click.ashx");
+            Thread.sleep(3000);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        for(int i=1 ; i < 2 ; i++){
+        for(int i=1 ; i < 200 ; i++){
             println("ValidateCode : " + ValidateCode);
-            votework(ipPrex + i , ValidateCode);
+            votework(ipPrex + i , ValidateCode , "7546635" , "1545362907,c9db69d23aa641bfb6d45cae734ef04f");
         }
+
+
+        //votework(ipPrex + "5" , ValidateCode);
 
         //println(getUserInfo("http://zsjh7l.v.vote8.cn/Front/VerifyCodeImage/Vote8Click.ashx"));
 
@@ -29,7 +33,7 @@ public class Vote {
         //assertEquals("status code incorrect", status, 200);
     }
 
-    public static  void votework(String ip , String ValidateCode){
+    public static  void votework(String ip , String ValidateCode , String id ,  String TimeStamp){
         URL url = null;
         HttpURLConnection con = null;
 
@@ -51,17 +55,16 @@ public class Vote {
         con.setRequestProperty("Connection", "keep-alive");
         con.setRequestProperty("Content-Length", "1055");
         con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-        con.setRequestProperty("Cookie", "__cfduid=d37f729839501f2e93655a14496088e0e1545307184; ASP.NET_SessionId=3yaixsnmuzqesvn01xcbfkrx; UM_distinctid=167cb7c4bcf578-0d7247a6edaf77-b781636-1fa400-167cb7c4bd063f; CNZZDATA4999742=cnzz_eid%3D1033803528-1545304753-null%26ntime%3D1545304753; yjs_id=89ec48ff45a5b8e6db00227ab292beb8; ctrl_time=1; Vote.VoteHistory.2902452=2018/12/20,1; Vote.CheckedOption.2878268=7546338");
+        con.setRequestProperty("Cookie", "__cfduid=d666053a3866a3e3d65b94600903d94bf1545295548; ASP.NET_SessionId=ooubwoge2hdi0udaufqfmigr; UM_distinctid=167cac7ac5422c-0b27821b628475-182e1503-15f900-167cac7ac562e1; yjs_id=fd99dac1778e6c45f682fb92a7016b67;   CNZZDATA5855278=cnzz_eid%3D683721456-1545290198-%26ntime%3D1545300998; CNZZDATA4999742=cnzz_eid%3D1712087599-1545295307-null%26ntime%3D1545352473; ctrl_time=1; Hm_lvt_24b7d5cc1b26f24f256b6869b069278e=1545440934; Hm_lpvt_24b7d5cc1b26f24f256b6869b069278e=1545440934; Vote.CheckedOption.2878268=" + id);
         con.setRequestProperty("Host", "zsjh7l.v.vote8.cn");
         con.setRequestProperty("Origin", "http://zsjh7l.v.vote8.cn");
-        con.setRequestProperty("Pragma", "no-cache");
         con.setRequestProperty("Referer", "http://zsjh7l.v.vote8.cn/");
         con.setRequestProperty("Upgrade-Insecure-Requests", "1");
         con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
         con.setRequestProperty("x-forwarded-for", ip);
-        con.setRequestProperty("Content-type", "application/json;charset=UTF-8");
+        /*con.setRequestProperty("Content-type", "application/json;charset=UTF-8");
         con.setRequestProperty("Accept-Charset", "utf-8");
-        con.setRequestProperty("contentType", "utf-8");
+        con.setRequestProperty("contentType", "utf-8");*/
 
         Map<String, String> parameters = new HashMap<>();
         parameters.put("__EVENTTARGET", "ctl00$cphMainContent$lbtnVote");
@@ -69,7 +72,7 @@ public class Vote {
         parameters.put("__VIEWSTATE", "/wEPDwUKMTEwNzI3NjcxNGRk3//vqoFv0biNf+2vN8kGxV0WP5M=");
         parameters.put("__VIEWSTATEGENERATOR", "9A48AF2D");
         parameters.put("ctl00$cphMainContent$rptTopicList$ctl00$tbOptionSearchInput", "");
-        parameters.put("VoteOption_2878268", "7546338");
+        parameters.put("VoteOption_2878268", id);
         parameters.put("ctl00$cphMainContent$rptTopicList$ctl00$hiddenTopicID", "2878268");
         parameters.put("hiddenVote8ClickValidateCode", ValidateCode);  // 1545311698,252d11c21b0b0ae7e2a78cf6ea0a7ed6
         parameters.put("ctl00$cphMainContent$ucVerifyCode$hiddenVerifyCodeModeInfo", "8,2c118771c7960234b365e9b887558e17");
@@ -78,7 +81,7 @@ public class Vote {
         parameters.put("ctl00$cphMainContent$ucComment$hiddenWeixinHeadImgSmallUrl", "");
         parameters.put("ctl00$cphMainContent$ucComment$tbNickname", "");
         parameters.put("ctl00$cphMainContent$hiddenRefererUrl", "http://zsjh7l.v.vote8.cn/");
-        parameters.put("ctl00$cphMainContent$hiddenTimeStampEncodeString", "1545321501,f99cb3001e9dd8bfb9895c474a855e57");
+        parameters.put("ctl00$cphMainContent$hiddenTimeStampEncodeString", TimeStamp);
         parameters.put("ctl00$cphMainContent$hiddenLatitude", "");
         parameters.put("ctl00$cphMainContent$hiddenLongitude", "");
         parameters.put("ctl00$cphMainContent$hiddenGeoLocationEncode", "");
@@ -98,6 +101,10 @@ public class Vote {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        con.setConnectTimeout(5000);
+        con.setReadTimeout(5000);
+        //println("request:" + con.toString());
 
         int status = 0;
         StringBuilder content = null;
@@ -151,7 +158,7 @@ public class Vote {
         }
         in.close();
 
-        //println("content.toString():" + content.toString() );
+        println("content.toString():" + content.toString() );
 
 
         return content.toString();
