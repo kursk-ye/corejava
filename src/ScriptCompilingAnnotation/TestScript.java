@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 import javax.script.Bindings;
+import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngineFactory;
@@ -51,6 +52,14 @@ public class TestScript {
     StringWriter writer = new StringWriter();
     engine_js.getContext().setWriter( new PrintWriter(writer, true));
 
-
+    String js = new String();
+    js = "function greet(how , whom){ return how + ',' + whom + '!'}";
+    try {
+      engine_js.eval(js);
+      Object result =  ((Invocable)engine_js).invokeFunction("greet" , "Hello","world" );
+      println(result);
+    } catch (ScriptException | NoSuchMethodException e) {
+      e.printStackTrace();
+    }
   }
 }
