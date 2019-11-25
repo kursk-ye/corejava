@@ -1,5 +1,7 @@
 package ScriptCompilingAnnotation.runtimeAnnotations;
 
+import static com.kursk.Util.println;
+
 import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
@@ -22,6 +24,10 @@ public class ActionListenerInstaller
           Field f = cl.getDeclaredField(a.source());
           f.setAccessible(true);
           addListener(f.get(obj) , obj , m);
+
+          println("annotationType:" + a.annotationType());
+          println("class:" + a.getClass());
+          println(a.toString());
         }
       }
     }
@@ -46,7 +52,5 @@ public class ActionListenerInstaller
     Method adder = source.getClass().getMethod("addActionListener" , ActionListener.class);
     adder.invoke(source , listener);
   }
-
-
 
 }
