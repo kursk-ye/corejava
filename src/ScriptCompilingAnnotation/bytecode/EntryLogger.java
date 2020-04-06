@@ -6,22 +6,22 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.objectweb.asm.AnnotationVisitor;
+/*import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.commons.AdviceAdapter;
+import org.objectweb.asm.commons.AdviceAdapter;*/
 
 import com.sun.org.apache.bcel.internal.generic.INVOKESTATIC;
 
 
-public class EntryLogger extends ClassVisitor
+public class EntryLogger // extends ClassVisitor
 {
   private String className;
 
-  public EntryLogger(ClassWriter writer, String className)
+/*  public EntryLogger(ClassWriter writer, String className)
   {
     super(Opcodes.ASM5, writer);
     this.className = className;
@@ -79,6 +79,6 @@ public class EntryLogger extends ClassVisitor
         path.toString().replace(".class", "").replaceAll("[/\\\\]", "."));
     reader.accept(entryLogger, ClassReader.EXPAND_FRAMES);
     Files.write(Paths.get(args[0]), writer.toByteArray());
-  }
+  }*/
 }
 
