@@ -1,5 +1,9 @@
 package com.kursk;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Util {
     public static void println(String s){
         System.out.println(s);
@@ -38,5 +42,17 @@ public class Util {
     public static void printf(String format, Object ... args)
     {
         System.out.printf( format,  args);
+    }
+
+    public static String getLine(){
+        BufferedReader in = new BufferedReader( new InputStreamReader(System.in));
+        String line = null;
+        try{
+            line = in.readLine();
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+
+        return line;
     }
 }
